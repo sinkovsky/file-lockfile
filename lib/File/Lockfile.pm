@@ -26,11 +26,12 @@ sub check {
 	
 	$lock_key = __PACKAGE__->lock_key unless $lock_key;
 	
-	if ( -s  $lock_key ) {
+	if ( -s $lock_key ) {
 		my $fh;
 		open $fh, '<', $lock_key;
 		my $pid = <$fh>;
-		return $pid; 
+		my $running = kill 0,$pid;
+		return $pid if $running;
 	}
 	return 0;
 }
