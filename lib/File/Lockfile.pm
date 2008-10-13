@@ -1,5 +1,7 @@
 package File::Lockfile;
 
+use version; our $VERSION = qv('1.0.0');
+
 require Class::Data::Inheritable;
 use base qw(Class::Data::Inheritable);
 
