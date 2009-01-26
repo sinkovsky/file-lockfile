@@ -7,9 +7,8 @@ File::Lockfile - create lockfile to prevent process simultaneous run
 	use File::Lockfile;
 
 	my $lockfile = File::Lockfile->new(
-		key => 'programname',
-		dir => '/var/lock',
-		pattern => '%k.lock');
+		'programname',
+		'/var/lock');
 
 	...
 		
@@ -45,9 +44,18 @@ Initializes module with required arguments.
 
 =head2 check
 
+Checks if lockfile exists, returns PID of running process.
+Actually, routine also checks if process with PID stored in lockfile actually running.
+
+my $pid = $lockfile->check;
+
+=head2 write
+
+Writes lockfile. Use it somewhere after checking if file exists
+
 =head2 remove
 
-=head2 install_die_handler
+Removes lockfile. Manage it by yourself. 
 
 =head1 SEE ALSO
 

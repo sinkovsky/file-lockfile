@@ -1,6 +1,9 @@
 package File::Lockfile;
 
-use version; our $VERSION = qv('1.0.0');
+use strict;
+use warnings;
+
+use version; our $VERSION = qv('1.0.1');
 
 require Class::Data::Inheritable;
 use base qw(Class::Data::Inheritable);
@@ -35,7 +38,7 @@ sub check {
 		my $running = kill 0,$pid;
 		return $pid if $running;
 	}
-	return 0;
+	return undef;
 }
 
 1;

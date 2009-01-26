@@ -1,6 +1,6 @@
 File::Lockfile
  
-Simple process locking text file based mechanism.
+Simple lockfile module
 
 INSTALLATION
   
