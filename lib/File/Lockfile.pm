@@ -3,7 +3,7 @@ package File::Lockfile;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('1.0.1');
+use version; our $VERSION = qv('1.0.2');
 
 require Class::Data::Inheritable;
 use base qw(Class::Data::Inheritable);

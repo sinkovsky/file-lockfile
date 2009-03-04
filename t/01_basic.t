@@ -1,11 +1,13 @@
 use strict;
 use warnings;
 
+use File::Temp qw/tempfile tempdir/;;
 use Test::More tests => 5;
 
 BEGIN { use_ok( "File::Lockfile"); }
 
-my $lockfile = File::Lockfile->new('testname','/tmp/');
+my $tempdir = tempdir(CLEANUP => 1);
+my $lockfile = File::Lockfile->new('testname',$tempdir);
 
 ok ( defined $lockfile, "Class instantiation" );
 

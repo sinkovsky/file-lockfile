@@ -5,7 +5,8 @@ my $build = Module::Build->new
    license => 'perl',
    requires => {
    	'perl' => '5.6.1',
-	'Class::Data::Inheritable' => '0.06'
+	'Class::Data::Inheritable' => '0.06',
+	'File::Temp' => '0.21'
    },
    dist_author => 'Sergey Sinkovskiy <glorybox@cpan.org>',
    add_to_cleanup => [
