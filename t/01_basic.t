@@ -7,7 +7,7 @@ use Test::More tests => 5;
 BEGIN { use_ok( "File::Lockfile"); }
 
 my $tempdir = tempdir(CLEANUP => 1);
-my $lockfile = File::Lockfile->new('testname',$tempdir);
+my $lockfile = File::Lockfile->new('testname.pid', $tempdir);
 
 ok ( defined $lockfile, "Class instantiation" );
 
